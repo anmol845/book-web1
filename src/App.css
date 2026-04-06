@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 20px 60px;
+  background: linear-gradient(to right, #f5f3f2, #f0e7e4);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-weight: 500;
+}
+
+.buy-btn {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.hero-left {
+  max-width: 500px;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero-left p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: #d9d7ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary {
+  background: #5b5bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+}
+
+.secondary {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid black;
+  background: transparent;
+}
+
+.hero-right img {
+  width: 300px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.card {
+  flex: 1;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.pink {
+  background: #f8c6c6;
+}
+
+.dark {
+  background: #0c1b3a;
+  color: white;
+}
+
+.light {
+  background: #e2e6ff;
+}

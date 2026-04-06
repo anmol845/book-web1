@@ -1,0 +1,55 @@
+.store {
+  padding: 40px;
+}
+
+/* GRID LAYOUT */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* CARD DESIGN */
+.book-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+  background: white;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.book-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.book-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #5f6af2;
+  color: white;
+  cursor: pointer;
+}
+.book-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.rating {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #f5a623;
+}
