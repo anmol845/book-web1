@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "./Navbar.css";
@@ -6,6 +6,8 @@ import "./Navbar.css";
 function Navbar() {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchInputRef = useRef(null);
   const navigate = useNavigate();
 
   const { cart } = useContext(CartContext);
@@ -15,6 +17,7 @@ function Navbar() {
     if (search.trim() !== "") {
       navigate(`/store?search=${search}`);
       setSearch("");
+      setSearchOpen(false);
       setMenuOpen(false);
     }
   };
@@ -37,6 +40,16 @@ function Navbar() {
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const toggleSearch = () => {
+    setSearchOpen((prev) => !prev);
+    setMenuOpen(false);
+    setTimeout(() => {
+      if (searchInputRef.current) {
+        searchInputRef.current.focus();
+      }
+    }, 0);
   };
 
   return (
@@ -74,25 +87,35 @@ function Navbar() {
         </li>
       </ul>
 
-      {/* 🔍 Search */}
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search books..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleKeyPress}
-        />
+      <div className="navbar-actions">
+        <div className={`search-box ${searchOpen ? "open" : ""}`}>
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search books..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyPress}
+          />
 
-        <span className="search-icon" onClick={handleSearch}>
-          🔍
-        </span>
+          <span className="search-icon" onClick={handleSearch}>
+            🔍
+          </span>
+
+          <button
+            type="button"
+            className="search-toggle"
+            onClick={toggleSearch}
+            aria-label="Toggle search input"
+          >
+            🔍
+          </button>
+        </div>
+
+        <button className="buy-btn" onClick={goToCart}>
+          🛒 Cart ({cart.length})
+        </button>
       </div>
-
-      {/* 🛒 Cart Button */}
-      <button className="buy-btn" onClick={goToCart}>
-        🛒 Cart ({cart.length})
-      </button>
     </nav>
   );
 }
