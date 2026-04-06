@@ -103,14 +103,19 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
   }
 
   .menu-toggle {
     display: block;
-    align-self: flex-end;
     transition: transform 0.25s ease;
   }
 
@@ -143,22 +148,23 @@
   }
 
   .navbar-actions {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-end;
     flex-wrap: nowrap;
     gap: 10px;
+    margin-left: auto;
   }
 
   .search-box {
     width: auto;
-    flex: 1 1 160px;
+    flex: 0 1 160px;
     max-width: none;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .buy-btn {
     width: auto;
-    margin-top: 10px;
+    margin-top: 0;
     padding: 8px 14px;
     font-size: 0.95rem;
   }
@@ -170,12 +176,16 @@
     padding: 12px 15px;
   }
 
+  .logo {
+    font-size: 1rem;
+  }
+
   .navbar-actions {
     gap: 8px;
   }
 
   .search-box {
-    flex: 1 1 140px;
+    flex: 0 1 120px;
   }
 
   .search-box input {
