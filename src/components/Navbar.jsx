@@ -5,6 +5,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [search, setSearch] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const { cart } = useContext(CartContext);
@@ -14,6 +15,7 @@ function Navbar() {
     if (search.trim() !== "") {
       navigate(`/store?search=${search}`);
       setSearch("");
+      setMenuOpen(false);
     }
   };
 
@@ -26,17 +28,50 @@ function Navbar() {
   // 🛒 Go to cart page
   const goToCart = () => {
     navigate("/cart");
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
       <h2 className="logo">📘 Redes</h2>
 
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/store">Store</Link></li>
-        <li><Link to="/contact">Contact US</Link></li>
+      <button
+        className={`menu-toggle ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation menu"
+      >
+        ☰
+      </button>
+
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li>
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/store" onClick={closeMenu}>
+            Store
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={closeMenu}>
+            Contact US
+          </Link>
+        </li>
       </ul>
 
       {/* 🔍 Search */}
