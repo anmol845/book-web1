@@ -64,3 +64,56 @@
   object-fit: cover;
 
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    padding: 20px 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left h1 {
+    font-size: 36px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .secondary {
+    margin-left: 0;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 15px 20px;
+  }
+
+  .left h1 {
+    font-size: 28px;
+  }
+
+  .tag {
+    padding: 4px 8px;
+  }
+
+  .primary, .secondary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
