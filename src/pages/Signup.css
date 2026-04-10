@@ -1,0 +1,55 @@
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.signup-form {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form h2 {
+  text-align: center;
+}
+
+.signup-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* 🔥 Modern Signup Button */
+.signup-btn {
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-link span {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+}

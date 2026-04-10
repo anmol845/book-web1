@@ -28,9 +28,15 @@ function Navbar() {
     }
   };
 
-  // 🛒 Go to cart page
+  // 🛒 Cart
   const goToCart = () => {
     navigate("/cart");
+    setMenuOpen(false);
+  };
+
+  // 🔐 Login
+  const goToLogin = () => {
+    navigate("/login");
     setMenuOpen(false);
   };
 
@@ -59,31 +65,22 @@ function Navbar() {
       <button
         className={`menu-toggle ${menuOpen ? "open" : ""}`}
         onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
       >
         ☰
       </button>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
-          <Link to="/" onClick={closeMenu}>
-            Home
-          </Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
         </li>
         <li>
-          <Link to="/about" onClick={closeMenu}>
-            About
-          </Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
         </li>
         <li>
-          <Link to="/store" onClick={closeMenu}>
-            Store
-          </Link>
+          <Link to="/store" onClick={closeMenu}>Store</Link>
         </li>
         <li>
-          <Link to="/contact" onClick={closeMenu}>
-            Contact US
-          </Link>
+          <Link to="/contact" onClick={closeMenu}>Contact US</Link>
         </li>
       </ul>
 
@@ -102,15 +99,15 @@ function Navbar() {
             🔍
           </span>
 
-          <button
-            type="button"
-            className="search-toggle"
-            onClick={toggleSearch}
-            aria-label="Toggle search input"
-          >
+          <button className="search-toggle" onClick={toggleSearch}>
             🔍
           </button>
         </div>
+
+        {/* 🔐 Only ONE Login Button */}
+        <button className="login-btn" onClick={goToLogin}>
+          🔐 Login
+        </button>
 
         <button className="buy-btn" onClick={goToCart}>
           🛒 Cart ({cart.length})
