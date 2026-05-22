@@ -24,15 +24,12 @@ function Home() {
           </p>
 
           <div className="buttons">
-            {/* ✅ Go to Store */}
             <button 
               className="primary"
               onClick={() => navigate("/store")}
             >
               Get Started →
             </button>
-
-            {/* ✅ Go to About */}
             <button 
               className="secondary"
               onClick={() => navigate("/about")}

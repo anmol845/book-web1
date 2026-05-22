@@ -19,22 +19,18 @@ const Contact = () => {
 
     console.log("Form Data:", formData);
     alert("Message sent successfully!");
-
-    // reset form
     setFormData({
       name: "",
       email: "",
       message: "",
     });
   };
-
   return (
     <div className="container mt-5">
       <div className="card p-4 shadow">
         <h2 className="text-center mb-4">Contact Us</h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Name */}
           <div className="mb-3">
             <label className="form-label">Name</label>
             <input
@@ -48,7 +44,6 @@ const Contact = () => {
             />
           </div>
 
-          {/* Email */}
           <div className="mb-3">
             <label className="form-label">Email</label>
             <input
@@ -62,7 +57,6 @@ const Contact = () => {
             />
           </div>
 
-          {/* Message */}
           <div className="mb-3">
             <label className="form-label">Message</label>
             <textarea
@@ -76,7 +70,6 @@ const Contact = () => {
             ></textarea>
           </div>
 
-          {/* Button */}
           <button type="submit" className="btn btn-primary w-100">
             Send Message
           </button>

@@ -1,17 +1,17 @@
 import React, { createContext, useState } from "react";
-
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
-  // Add item
   const addToCart = (book) => {
-    setCart([...cart, book]);
+    setCart((prevCart) => [...prevCart, book]);
+  };
+  const removeFromCart = (indexToRemove) => {
+    setCart((prevCart) => prevCart.filter((_, index) => index !== indexToRemove));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

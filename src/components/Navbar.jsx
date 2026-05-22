@@ -11,8 +11,6 @@ function Navbar() {
   const navigate = useNavigate();
 
   const { cart } = useContext(CartContext);
-
-  // 🔍 Search
   const handleSearch = () => {
     if (search.trim() !== "") {
       navigate(`/store?search=${search}`);
@@ -27,14 +25,11 @@ function Navbar() {
       handleSearch();
     }
   };
-
-  // 🛒 Cart
   const goToCart = () => {
     navigate("/cart");
     setMenuOpen(false);
   };
 
-  // 🔐 Login
   const goToLogin = () => {
     navigate("/login");
     setMenuOpen(false);
@@ -60,7 +55,15 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">📘 Redes</h2>
+      <div className="logo">
+        <span className="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5.5C4 4.67 4.67 4 5.5 4h13c.83 0 1.5.67 1.5 1.5v13c0 .83-.67 1.5-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="#ffffff" strokeWidth="1.5"/>
+            <path d="M7 7h10M7 11h10M7 15h7" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+        </span>
+        <span className="logo-text">Redes Books</span>
+      </div>
 
       <button
         className={`menu-toggle ${menuOpen ? "open" : ""}`}
@@ -95,22 +98,38 @@ function Navbar() {
             onKeyDown={handleKeyPress}
           />
 
-          <span className="search-icon" onClick={handleSearch}>
-            🔍
-          </span>
+          <button
+            type="button"
+            className="search-submit"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
 
           <button className="search-toggle" onClick={toggleSearch}>
-            🔍
           </button>
         </div>
 
-        {/* 🔐 Only ONE Login Button */}
+
         <button className="login-btn" onClick={goToLogin}>
-          🔐 Login
+          <span className="login-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#fff" opacity="0.9"/>
+              <path d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4v1H4v-1z" fill="#fff" opacity="0.9"/>
+            </svg>
+          </span>
+          <span>Login</span>
         </button>
 
         <button className="buy-btn" onClick={goToCart}>
-          🛒 Cart ({cart.length})
+          <span className="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#0f172a"/>
+              <path d="M10 6V4a2 2 0 0 1 4 0v2" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </span>
+          <span>Cart ({cart.length})</span>
         </button>
       </div>
     </nav>

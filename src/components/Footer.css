@@ -1,0 +1,174 @@
+.footer {
+  background: #0f0f0f;
+  color: white;
+  padding: 70px 8% 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;
+}
+
+.footer-section h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer-section h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #facc15;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 20px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.footer-logo h1 {
+  font-size: 28px;
+  color: #facc15;
+}
+
+.footer-description {
+  color: #cfcfcf;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+.footer-contact p {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: #d1d1d1;
+}
+
+.footer-contact a {
+  color: #d1d1d1;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #facc15;
+}
+
+.footer-icon {
+  color: #facc15;
+  margin-top: 4px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #d1d1d1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #facc15;
+  padding-left: 6px;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  background: #1e1e1e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #facc15;
+  color: black;
+  transform: translateY(-5px);
+}
+
+.newsletter-text {
+  color: #cfcfcf;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsletter-form input {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: #facc15;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #ffe14d;
+  transform: scale(1.03);
+}
+
+.footer-bottom {
+  border-top: 1px solid #2a2a2a;
+  margin-top: 60px;
+  padding-top: 25px;
+  text-align: center;
+  color: #9e9e9e;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 6% 30px;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+}
