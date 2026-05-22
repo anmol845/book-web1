@@ -51,3 +51,46 @@
   font-size: 18px;
   color: #f5a623;
 }
+
+@media (max-width: 992px) {
+  .store {
+    padding: 30px 20px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .book-card {
+    padding: 18px;
+  }
+
+  .book-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 720px) {
+  .store {
+    padding: 20px 15px;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .book-card {
+    padding: 16px;
+  }
+
+  .book-card img {
+    height: 220px;
+  }
+
+  .book-card button {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
