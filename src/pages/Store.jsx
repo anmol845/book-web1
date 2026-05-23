@@ -3,6 +3,19 @@ import { useLocation } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "./Store.css";
 
+// Star rating component
+const StarRating = ({ rating }) => {
+  return (
+    <div className="stars">
+      {[...Array(5)].map((_, i) => (
+        <span key={i} className={i < rating ? "star filled" : "star"}>
+          ★
+        </span>
+      ))}
+    </div>
+  );
+};
+
 function Store() {
   const { addToCart } = useContext(CartContext);
   const location = useLocation();
@@ -108,10 +121,7 @@ function Store() {
             <img src={book.image} alt={book.title} />
 
             <h3>{book.title}</h3>
-            <div className="rating">
-              {repeat(book.rating)}
-              {repeat(5 - book.rating)}
-            </div>
+            <StarRating rating={book.rating} />
 
             <p>₹{book.price}</p>
 
